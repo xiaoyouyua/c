@@ -1,0 +1,560 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	//计算两个数的和
+	int num1 = 0;
+	int num2 = 0;
+	int sum = 0;
+	//输入数据--使用输入函数scanf
+	scanf("%d%d", &num1, &num2);//取地址符号&
+	sum = num1 + num2;
+	printf("sum=%d\n", sum);
+
+	return 0;
+}
+//int a = 100;
+//int main()
+//{
+//	//int a = 10;
+//	//局部变量和全局变量名字建议不要相同-容易误会，产生bug
+//	//当个局部变量和全局变量相同的时候，局部变量优先
+//	printf("%d\n",a);
+//	return 0;
+//}
+
+//short num2 = 20;//定义在代码块（{}）外的是全局变量
+//int main()
+//{
+//	short num1 = 10; //定义在代码块（{}）内的是局部变量
+//	return 0;
+//
+//}
+//int main()
+//{
+//	//年龄
+//	//20
+//	short age = 20;//向内存申请2个字节=16bit位，用来存放20
+//	float weight = 55.5f;//向内存申请4个字节，存放小数
+//	return 0;
+//}
+//int main()
+//{
+//	printf("%d\n", sizeof(char));//1
+//	printf("%d\n", sizeof(short));//2
+//	printf("%d\n", sizeof(int));//4
+//	printf("%d\n", sizeof(long));//4
+//	printf("%d\n", sizeof(long long));//8
+//	printf("%d\n", sizeof(float));//4
+//	printf("%d\n", sizeof(double));//8
+//	return 0;
+//}
+
+
+
+
+//char 字符类型
+//%d -打印整型
+//%c -打印字符
+//%f -打印浮点数字-打小数
+//%p -以地址的形式打印
+//%x -打印16进制
+//int main()
+//{
+//	//char ch = 'A';//内存
+//	//printf("%c\n", ch);//%c--打印字符格式的数据
+//	//short int -短整型
+//	//int -整型
+//
+//	//int age = 20;
+//	//printf("%d\n", age);//%d --打印整型十进制数据
+//	//long num = 100;
+//	//printf("%d\n", num);
+//	//float f = 5.0;
+//	//printf("%f\n", f);
+//	//double d= 3.14;
+//    //printf("%f\n",d);
+//	 return 0;
+//}
+//int main()
+//{
+//	printf("hehe\n");
+//		return 0;
+//}
+
+
+
+
+//包含一个叫stdio.h的文件
+//std-标准 standard input output
+//#include<stdio.h>
+//int main()//主函数.程序的入口main有且只有一个
+//{
+//	//这里完成任务
+//	//在屏幕上输出hell
+//	//函数-print function -printf -打印函数
+//	//库函数-C语言本身提供给我们使用的函数
+//	//别人的东西-打招呼
+//	//#include
+//	printf("hell\n");
+//	return 0;
+//}
+//int 是整型的意思
+//main前面的int表示main函数调用返回一个整型值
+//int main()
+//{
+//	return 0;//返回 0
+
+//}
+// 过时写法
+//void main()
+//{
+
+//}
+#include <string.h>
+
+int  main()
+{
+	int arr[10] = { 0 };//10个整型元素的数组
+	int  sz = 0;
+	//10*sizeof{int}=40
+	printf("%d\n", sizeof(arr));
+	//计算数组的元素个数
+	//个数=数组总大小/每个元素的大小
+	sz = sizeof(arr) / sizeof(arr[0]);
+	printf("sz=%d\n", sz);
+	//sizeof计算的是变量/类型所占空间的大小，单位是字节
+	/*printf("%d\n", sizeof(a));
+	printf("%d\n", sizeof(int));
+	printf("%d\n", sizeof a);*/
+	//printf("%d\n", sizeof int);×
+
+		return 0;
+}
+//单目操作符
+//双目操作符
+//三目操作符
+//int main()
+//{
+//	//int a = 10;
+//	//int b = 1;
+//	//a + b;//+ 双目操作符
+//	//c语言中我们表示真假
+//	//0-假
+//	//非0- 真
+//	int a = 0;
+//	printf("%d\n", a);
+//	printf("%d\n", !a);
+//	return 0;
+// }
+//int main()
+//{
+//	int a = 10;
+//	a = 20;//=赋值  ==判断相等
+//	a = a + 10;
+//	a += 10;
+//	a = a - 10;
+//	a -= 10;
+//	a = a & 2;
+//	a &= 2;
+	//复合赋值符
+	//+= -= /= %= >>= <<= &= |= '=
+	// return 0;
+//}
+//int main()
+//{
+//	//2进制位操作
+//	//&按位与
+//	//|按位或
+//	//^按位异或
+//	//int a = 3;
+//	//int b = 5;
+//	//int c = 3 &5;
+//	//011
+//	//101
+//	//1
+//	//int a = 3;
+//	//int b = 5;
+//	//int c = 3|5;
+//	//011
+//	//101
+//	//111
+//	int a = 3;
+//	int b = 5;
+//	int c = 3 ^ 5;//不是次方--是异或
+//	//异或的计算规律；
+//	// 对应的二进制位相同，则为0
+//	// 对应的二进制位相异，则为1
+//	//011
+//	//101
+//	//110
+//	printf("%d\n", c);
+//	return 0;
+//}
+//int main()
+//{
+//	int arr[10] ={1,2,3,4,5,6,7,8,9,10};//定义一个存数10个整数数字的数组
+//	int i = 0;
+//	while (i < 10)
+//	{
+//		printf("%d\n",arr[i]);
+//		i++;
+//	}
+//	/*printf("%d\n",arr[4]);*///下标的方式访问元素
+//	//arr【下标】
+//	return 0;
+//}
+//int main()
+//{
+//	int line = 0;
+//	printf("表白\n");
+//	while (line <= 2000)
+//	{
+//		printf("我爱你%d\n",line);
+//		line++;
+//	}
+//	if(line>2000)
+//	printf("我同意\n");
+//	return 0;
+//}
+
+//int main()
+//{
+//	int xx = 0;
+//	printf("你是否好好学习（1/0）>\n");
+//	scanf("%d", &xx);
+//	if (xx == 1) {
+//		printf("好工作\n");
+//	}
+//	else
+//	{
+//		printf("种红薯\n");
+//	}
+//
+//	return 0;
+//}
+//int Add(int x, int y)
+//{
+//	int z = x + y;
+//	return z;
+//}
+//int main()
+//{
+//	int num1 = 10;
+//	int num2 = 12;
+//	int a = 100;
+//	int b = 120;
+//	int sum = 0;
+//	/*scanf("%d%d", &num1, &num2);*/
+//	/*sum = num1 + num2 ;*/
+//	sum = Add(num1, num2);
+//	sum = Add(a, b);
+//	printf("sum=%d\n", sum);
+//	return 0;
+//}
+
+
+//int main()
+//{
+	//printf("%c\n", '\x61');
+	//61十六进制--》十进制数97
+	//printf("%c\n",'\32');
+	//printf("%d\n", strlen("c:\test\32\test.c"));
+	//\32是2个8进制数字
+	//32作为8进制代表的十进制数字，作为ASCII码值，对应的字符
+	//32 --》10进制 26 --作为ASCII码值代表的字符
+//	return 0;
+//}
+//int main()
+//{
+//	char arr1[] = "abc";
+//	char arr2[] = { 'a','b','c' };
+//	printf("%d\n", strlen(arr1));//strlen -string length -计算字符串长度的
+//	printf("%d\n", strlen(arr2));
+//	return 0;
+//}
+//int main()
+//{
+	//数据在计算机上存储的时候，存储的是2进制
+	// #av$
+	// a - 97
+	// A - 65
+	// ASCII 编码
+	// ASCII 码值 
+	//char arr1[] = "abc";//数组
+	////"abc"--'a''b''c''\0----'字符串结束标志
+	//char arr2[] = {'a','b','c',0};
+	//printf("%s\n", arr1);
+	//printf("%s\n", arr2);
+//	return 0;
+//}
+//int float
+//char
+//字符串类型
+//int main()
+//{
+//	"abdas";
+//	"hello bit";
+//	""//空字符串
+//	return 0；
+//}
+//4.枚举常量
+//枚举一一列举
+//性别：男，女，保密
+//三原色：红、黄、蓝
+//枚举关键 -enum
+//enum Color {
+//	RED,
+//	YELLOW,
+//	BLUE
+//};
+//int main()
+//{
+//	enum Color color = BLUE;
+//	color = YELLOW;
+//	//BLUE = 6;//err
+//	return 0;
+//}
+
+
+
+//enum Sex {
+//	MALE,
+//	FEMALE,
+//	SECRET
+//};
+////MAlE,FEMALE,SECRET-枚举常量
+//int main()
+//{
+//	//enum Sex s = FEMALE；
+//	printf("%d\n",MALE);//0
+//	printf("%d\n",FEMALE);//1
+//	printf("%d\n", SECRET);//2
+//	return 0;
+//}
+
+//3.#define 定义的标识符常量
+//#define MAX 10
+//int main()
+//{
+//	int arr[MAX] = { 0 };
+//	printf("%d\n",MAX);
+//	return 0;
+//}
+//int main()
+//{
+//	//const-常属性
+//	//const int n = 10;//n是变量，但是又有常属性，所以我们说n是常变量
+//	//int arr[n] = { 0 };
+//	//const修饰的常变量
+//	/*const int num = 4;
+//	printf("%d\n", num);
+//	int num = 8;
+//	printf("%d\n", num);*/
+//	//字面常量
+//	//2
+//	//3
+//	//3.12
+//	return 0;
+//}
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+int main()
+{
+	char ch = 'w';
+	char* pc = &ch;
+	//*pc='a';
+	printf("%c\n", sizeof(ch));
+	return 0;
+
+}
+
+
+//int main()
+//{
+//	int a = 10;//4个字符
+//	int* p = &a;//取地址
+//	//printf("%p\n",&a);
+//	//printf("%p\n",p);
+//	*p = 20;//*-解引用操作符
+//	printf("%d\n",a);
+//
+//	//有一种变量是用来存放地址的-指针变量
+//	//printf("%p\n",&a);
+//
+//	return 0;
+//}
+
+//#define 定义标识符常量
+//#define MAX=100
+//#define 可以定义宏-带参数
+//函数定义
+//int Max(int x, int y)
+//{
+//	if (x > y)
+//		return x;
+//	else
+//		return y;
+//}
+////宏定义
+//#define MAX(x,y)(x>y?x:y)
+//int main()
+//{
+//	//int a = MAX;
+//	int a = 1;
+//	int b = 2;
+//	//函数
+//	int max = Max(a, b);
+//	printf("%d\n", max);
+//	//宏的方式
+//	max = MAX(a, b);
+//	printf("%d\n", max);
+//	return 0;
+//}
+
+
+
+//static 修饰局部变量
+//局部变量的生命周期变长
+//static 修饰全局变量
+//改变了变量的作用域--让静态的全局变量只能在自己所在的源文件内部使用
+//出了源文件就无法使用了
+//static修饰函数
+//也是改变了函数的作用域--不准确
+//static修饰函数改变了函数的链接属性，
+//外部链接属性--->内部链接属性
+
+//声明外部函数
+//extern int Add(int, int);
+//int main()
+//{
+//	int a = 1;
+//	int b = 2;
+//	int sum = Add(a, b);
+//	printf("%d\n", sum);
+//	return 0;
+//}
+//int main()
+//{
+//	//extern--声明外部符号
+//	extern int g_val;
+//	printf("%d\n", g_val);
+//	return 0;
+//}
+
+
+
+//void test()
+//{
+//	static int a = 1;//a 是一个静态的局部变量
+//	a++;
+//	printf("a=%d\n", a);//2 3 4 5 6
+//}
+//int main()
+//{
+//	int i = 0;
+//	while (i<5)
+//	{
+//		test();
+//		i++;
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	//int float;//err
+//	//typedef -类型定义 -类型重定义
+//	typedef unsigned int u_int;
+//	unsigned int num = 20;
+//	u_int num2 = 20;
+//
+//
+//	return 0;
+//}
+
+
+//int main()
+//{
+//	//register int a = 10;//建议把a定义成寄存器变量
+//	int a = 10;
+//	a = -2;
+	//int 定义的变量是有符号的；
+	//signed int
+	//unsigned  int num = 1;
+	//struct -结构体关键字
+	//union -联合体/共同体
+
+//	return 0;
+//}
+//int Add(int x, int y)
+//{
+//	int z = 0;
+//	z = x + y;
+//	return z;
+//}
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	arr[4];//[]下标引用操作符
+//	int a = 10;
+//	int b = 20;
+//	int num = Add(a, b);//()函数调用操作符
+//	printf("%d\n", num);
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	int max = 0;
+//	max = (a > b ? a : b);
+//	if (a > b)
+//		max = a;
+//	else
+//		max = b;
+//	return 0;
+//}
+//int main()
+//{
+//	//真--非0
+//	//假--0
+//	//&&--逻辑与
+//	//||--逻辑或
+//	int a = 2;
+//	int b = 1;
+//	//int c = a && b;//1
+//	int c = a || b;//1
+//	printf("%d\n", c);
+//	return 0;
+//}
+//int main()
+//{
+//	int a =(int) 3.14;//double 转换成int
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 10;
+//	//int b = ++a;//前置++，先++，后使用//a=11 b=11
+//	//int b = a++;//后置++，先使用，后++//a=11 b=10
+//	//int b =a--;//后置--，先使用，后--//a=9 b=10
+//	int b = --a;//前置--，先--，后使用//a=9 b=9
+//	printf("a=%d\n b=%d\n", a, b);
+//	return 0;
+//
+//}
+//int main()
+//{
+//	int a = 0;
+//	int b = ~a;
+//	//~一按（2进制）位取反
+//	//00000000000000000000000000000000
+//	//11111111111111111111111111111111
+//	//原码、反码、补码
+//	//负数在内存存储的时候，存储的是二进制的补码
+//	//11111111111111111111111111111111（补码）
+//	//11111111111111111111111111111110（反码）
+//	//10000000000000000000000000000001（原码）
+//	printf("%d\n", b);//使用的，打印的是这个数的原码
+//	return 0;
+//}
