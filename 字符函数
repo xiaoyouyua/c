@@ -1,0 +1,153 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+#include<assert.h>
+//int main()
+//{
+//	char* p1 = "abc";
+//	char* p2 = "qwe";
+//	//int ret = strcmp(p1, p2);
+//	//printf("%d\n", ret);
+//	if (strcmp(p1, p2)>0)
+//	{
+//		printf("p1>p2");
+//	}
+//	else if (strcmp(p1, p2)==0)
+//	{
+//		printf("p1=p2");
+//
+//	}
+//	else if (strcmp(p1, p2) < 0)
+//	{
+//		printf("p1<p2");
+//	}
+//	return 0;
+
+//}
+//int my_strcmp(const char* str1, const char* str2)
+//{
+//	assert(str1 && str2);
+//	while (str1 ==str2)
+//	{
+//		if (str1=='\0')
+//		{
+//			return 0;
+//		}
+//		str1++;
+//		str2++;
+//	}
+//	if (str1 > str2)
+//		return 1;
+//	else
+//		return -1;
+//}
+//int my_strcmp(const char* str1, const char* str2)
+//{
+//assert(str1&& str2);
+//while (str1 == str2)
+//{
+//	if (str1 == '\0')
+//	{
+//		return 0;
+//	}
+//	str1++;
+//	str2++;
+//}
+//return (str1 - str2);
+//}
+//int main() 
+//{
+//	char* p1 = "abc";
+//	char* p2 = "qwe";
+//	int ret = my_strcmp(p1, p2);
+//	printf("%d\n", ret);
+//}
+//int main()
+//{
+//	char arr1[10] = "abcdef";
+//	char arr2[] = "hello aaa";
+//	strncpy(arr1, arr2, 4);
+//	return 0;
+//}
+//char* my_strstr(const char* p1, const char* p2)
+//{
+//	assert(p1 != NULL);
+//	assert(p2 != NULL);
+//	char *s1 =NULL;
+//	char *s2 = NULL;
+//	char *cur = (char*)p1;
+//	if (*p2 == '\0')
+//	{
+//		return (char*)p1;
+//	}
+//	while (*cur)
+//	{
+//		s1 = cur;
+//		s2 = (char*)p2;
+//		while (*s1 && *s2  && (*s1 == *s2))
+//		{ 
+//			s1++;
+//			s2++;
+//		}
+//		if (*s2=='\0')
+//		{
+//			return cur;
+//		}
+//		cur++;
+//	}
+//	return NULL;
+//}
+//int main()
+//{
+//	char *arr1 = "abcdefghi";
+//	char *arr2 = "def";
+//	char* ret = my_strstr(arr1, arr2);
+//	if (ret==NULL)
+//	{
+//		printf("子串不存在");
+//	}
+//	else
+//	{
+//		printf("%s\n", ret);
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	char arr[] = "ddd@game.com";
+//	char* p = "@.";
+//	char buf[1024] = { 0 };
+//	strcpy(buf, arr);
+//	char* ret = NULL;
+//	for ( ret = strtok(arr,p); ret != NULL; ret=strtok(NULL,p))
+//	{
+//		printf("%s\n", ret);
+//	}
+//	return 0;
+//}
+#include<errno.h>
+int  main()
+{
+	//0 -    No error
+	//1 -    Operation not permitted
+	//2 -    No such file or directory
+	//...
+	//errno是一个全局的错误码的变量
+	//当c语言的库函数在执行过程中，发生了错误，就会把对应的错误码，赋值到errno
+
+	//char* str = strerror(errno);
+	//printf("%s\n", str);
+
+	//打开文件
+	FILE* pf = fopen("text.txt", "r");
+	if (pf==NULL)
+	{
+		printf("%s\n", strerror(errno));
+	}
+	else
+	{
+		printf("open flie\n");
+
+	}
+	return 0;
+}
