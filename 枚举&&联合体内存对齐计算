@@ -1,0 +1,156 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+// struct stu
+//{
+//	char name[20];
+//	char tele[12];
+//	char sex[10];
+//	int age;
+//}; s4, s5, s6;//全局变量
+//struct stu s3;//全局变量
+//
+//int mian()
+//{
+//	struct stu s1;//局部变量
+//	struct stu s2;//局部变量
+//}	
+//struct s1
+//{
+//	char c1;
+//	int a;
+//	char c2;
+//};
+//struct s2
+//{
+//	char c1;
+//	char c2;
+//	int a;
+//};
+//int main()
+//{
+//	struct s1 a1 = { 0 };
+//	printf("%d\n", sizeof(a1));//12
+//	struct s2 a2 = { 0 };
+//	printf("%d\n", sizeof(a2));//8
+//	return 0;
+//}
+//struct S
+//{
+//	char a;
+//	int b;
+//	double c;
+//};
+//void Init(struct S* ps)
+//{
+//	ps->a = 'w';
+//	ps->b = 100;
+//	ps->c = 3.14;
+//}
+//void Print1(struct S tmp)
+//{
+//	printf("%c %d %lf\n ", tmp.a, tmp.b, tmp.c);
+//}
+//void Print2(struct S* ps)
+//{
+//	printf("%c %d %lf\n ",ps->a,ps->b,ps->c);
+//
+//}
+//int main()
+//{
+//	struct S s = { 0 };
+//	Init(&s);
+//	Print1(s);
+//	Print2(&s);
+//	return 0;
+//}
+//struct S
+//{
+//	int a : 2;
+//	int b : 5;
+//	int c : 10;
+//	int d : 30;
+//};
+//int main()
+//{
+//	struct S s;
+//	printf("%d\n", sizeof(s));
+//	return 0;
+//}
+
+//enum Sex
+//{
+//	//枚举的可能取值
+//	MALE,
+//	FEMALE,
+//	SECRET
+//};
+//
+//enum Color
+//{
+//	red,
+//	green,
+//	blue
+//};
+//int main()
+//{
+//	enum Sex s = MALE;
+//	enum Color c = blue;
+//	return 0;
+//}
+//union Un
+//{
+//	char c;
+//	int i;
+//};
+//
+//int main()
+//{
+//	union Un un;
+//	printf("%d\n", sizeof(un));
+//	printf("%p\n", &un.c);
+//	printf("%p\n", &un.i);
+//
+//}
+//int check_sys()
+//{
+//	int i = 1;
+//	return *((char*)&i);
+//}
+//int main()
+//{
+//	int ret = check_sys();
+//	if (ret == 1)
+//	{
+//		printf("小端");
+//	}
+//	else
+//	{
+//		printf("大端");
+//	}
+//	return 0;
+//}
+int check_sys()
+{
+	union Un
+	{
+		char a;
+		int b;
+	}u;
+	u.b = 1;
+	//返回1，表示小端
+	//返回2，表示大端
+	return u.a;
+}
+int main()
+{
+	int ret = check_sys();
+	if (ret == 1)
+	{
+		printf("小端");
+	}
+	else
+	{
+		printf("大端");
+	}
+	return 0;
+}
