@@ -1,0 +1,82 @@
+#include<stdio.h>
+
+//int main()
+//{
+//	FILE* pf = fopen("text.txt", "w");
+//	if (pf==NULL)
+//	{
+//		return 0;
+//	}
+// 写文件
+//	fputs("love\n",pf);
+//	fputs("you\n", pf);
+//	fclose(pf);
+//	pf = NULL;
+//
+//	return 0;
+//}
+//int main()
+//{
+//	//从键盘读取一行文本信息
+//	char buf[1024] = { 0 };
+//	//fgets(buf, 1024, stdin);//标准输入流读取
+//	//fputs(buf, stdout);//输出到标准输出流
+//	gets(buf);
+//	puts(buf);
+//	return 0;
+//}
+//struct S
+//{
+//	int a;
+//	float f;
+//	char arr[10];
+//};
+//int main()
+//{
+//	struct S s = { 111,3.14f,"ddd" };
+//	FILE* pf = fopen("text.txt", "w");
+//	if (pf==NULL)
+//	{
+//		return 0;
+//	}
+//	//格式化的形式写文件
+//	fprintf(pf, "%d %f %s", s.a, s.f, s.arr);
+//	fclose(pf);
+//	pf = NULL;
+//	return 0;
+//}
+//struct S
+//{
+//	int a;
+//	float f;
+//	char arr[10];
+//};
+//int main()
+//{
+//	struct S s = { 111,3.14f,"ddd" };
+//	FILE* pf = fopen("text.txt", "r");
+//	if (pf == NULL)
+//	{
+//		return 0;
+//	}
+//	//格式化的输入数据
+//	fscanf(pf, "%d %f %s", &(s.a), &(s.f) ,&(s.arr));
+//	printf("%d %f %s", s.a, s.f, s.arr);
+//	fclose(pf);
+//	pf = NULL;
+//	return 0;
+//}
+struct S
+{
+	int a;
+	float f;
+	char arr[10];
+};
+int main()
+{
+	struct S s = { 0 };
+	fscanf(stdin, "%d %f %s", &(s.a), &(s.f), s.arr);
+	printf(stdout,"%d %f %s", s.a, s.f, s.arr);
+
+	return 0;
+}
